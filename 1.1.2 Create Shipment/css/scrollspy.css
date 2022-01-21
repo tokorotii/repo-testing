@@ -1,0 +1,39 @@
+/* 1. Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Make nav sticky */
+main > #nav {
+  position: sticky;
+  top: 3rem;
+  align-self: start;
+  font-size: 24px;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+  padding-left: 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.section-nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0.125rem 0;
+  color: black;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/** page layout **/
+main {
+  display: grid;
+  grid-template-columns: 1fr 25em;
+}

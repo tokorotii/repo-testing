@@ -1,0 +1,38 @@
+nav {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  background-color: #383888;
+}
+
+/* .card-body{
+
+} */
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.f24 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.form-control,
+.form-select {
+  border-width: 2px;
+  border-color: black;
+}
+.form-control::placeholder {
+  color: black;
+  opacity: 1;
+  /* font-size: 21px; */
+  font-weight: 600;
+}
+.res {
+  border-color: white;
+  font-size: 21px;
+  font-weight: 500px;
+}

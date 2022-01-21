@@ -1,0 +1,57 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  /*overflow: hidden;*/
+}
+/* .container-fluid {
+} */
+.fs-34 {
+  font-size: 2.125rem;
+}
+
+.fs-22 {
+  font-size: 1.375rem;
+}
+
+.fs-26 {
+  font-size: 1.75rem;
+}
+
+.input-login {
+  border-color: #172b85;
+  border-width: 2px;
+  border-radius: 5px;
+  font-size: 1.75rem;
+}
+
+.text-blue {
+  color: #2a2a68;
+}
+.logo-login {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.btn-login {
+  background-color: #ff9d00;
+  color: #2a2a68;
+  border-radius: 1.875rem;
+  width: 11.75rem;
+  height: 3.185rem;
+  font-size: 1.625rem;
+}
+
+.anchor-registration {
+  text-decoration: none;
+  color: #172b85;
+  font-size: 1.375rem;
+}
+.anchor-forget {
+  text-decoration: none;
+  color: black;
+  font-size: 1.375rem;
+}
+/* .col-4 {
+  width: 100%;
+} */
