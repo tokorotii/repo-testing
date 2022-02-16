@@ -1,19 +1,7 @@
-nav {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  background-color: #383888;
-}
-
-/* .card-body{
-
-} */
-
 body {
   font-family: "Inter", sans-serif;
   font-weight: 600;
 }
-
 .f24 {
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -35,4 +23,37 @@ body {
   border-color: white;
   font-size: 21px;
   font-weight: 500px;
+}
+
+.flight {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 46px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 26px;
+  padding-top: 10px;
+}
+
+.select2-container--default .select2-selection--single {
+  border: 2px solid black;
+  border-radius: 4px;
+  height: 46px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-size: 21px;
+  line-height: 200%;
+  font-weight: normal;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-weight: 400;
+    font-size: 20px;
+  }
 }
