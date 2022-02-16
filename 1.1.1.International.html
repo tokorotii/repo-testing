@@ -26,10 +26,35 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
     <style type="text/css">
+      .flight {
+        display: none;
+      }
       @media print {
         body {
           zoom: 80%;
         }
+      }
+
+      .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 46px;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: 26px;
+        padding-top: 10px;
+      }
+
+      .select2-container--default .select2-selection--single {
+        border: 2px solid black;
+        border-radius: 4px;
+        height: 46px;
+      }
+
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 21px;
+        line-height: 200%;
+        font-weight: normal;
+        color: black;
       }
     </style>
 
