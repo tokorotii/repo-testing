@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("body").on("click", ".tambah", function () {
     var html = "";
-    html += '<div class="col-lg-3 col-md-4 g-0 dihapus">';
+    html += '<div class="col-lg-3 col-md-6 g-0 dihapus">';
     html += '<div class="card my-1 mx-1" style="border-radius: 20px; border-top: none; box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45)">';
     html += '<div class="card-body">';
     html += '<div class="row pb-2">';
