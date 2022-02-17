@@ -68,4 +68,7 @@ body {
   .ray-logo {
     width: 150px;
   }
+  .title {
+    margin-top: 25px;
+  }
 }
