@@ -6,6 +6,7 @@ body {
 .form-control {
   border-width: 2px;
   border-color: black;
+  font-size: 21px;
 }
 .form-select {
   border-width: 2px;
@@ -65,9 +66,6 @@ body {
 
 /* MEDIA QUERY*/
 @media (max-width: 576px) {
-  .ray-logo {
-    width: 150px;
-  }
   .title {
     margin-top: 25px;
   }

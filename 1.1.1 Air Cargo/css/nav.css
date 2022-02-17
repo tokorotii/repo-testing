@@ -16,6 +16,11 @@ nav {
   border-bottom: solid;
   border-width: 2px;
 }
+@media (max-width: 576px) {
+  .ray-logo {
+    width: 150px;
+  }
+}
 
 /* ANIMATION */
 .animate {
@@ -47,10 +52,4 @@ nav {
 .nav-item .show::after {
   transform: rotate(-180deg);
   transition: all 0.25s ease-in;
-}
-
-@media (max-width: 576px) {
-  .login-icon {
-    width: 50px;
-  }
 }

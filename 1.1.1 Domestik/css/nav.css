@@ -14,7 +14,14 @@ nav {
   border-bottom: solid;
   border-width: 2px;
 }
-
+.login-icon {
+  width: 50px;
+}
+@media (max-width: 576px) {
+  .ray-logo {
+    width: 150px;
+  }
+}
 /* ANIMATION */
 .animate {
   animation-duration: 0.5s;
