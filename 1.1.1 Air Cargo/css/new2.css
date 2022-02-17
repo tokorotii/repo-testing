@@ -17,3 +17,55 @@ body {
   font-size: 21px;
   font-weight: 500px;
 }
+.title {
+  font-size: 36px;
+  margin-top: 75px;
+}
+.header {
+  font-size: 32px;
+}
+.label {
+  font-size: 27px;
+}
+.card-calculate {
+  border-radius: 20px;
+  border-top: none;
+  box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45);
+}
+#calculate {
+  background-color: #699bf7;
+  color: white;
+  width: 290px;
+  height: 50px;
+  font-size: 24px;
+}
+.tambah {
+  border-width: 2px;
+  border-color: #699bf7;
+  color: #699bf7;
+  width: 290px;
+  height: 50px;
+  font-size: 24px;
+}
+.card-result {
+  border-width: 3px;
+  border-radius: 10px;
+  border-color: black;
+}
+.font-result {
+  font-size: 21px;
+}
+.print-btn {
+  background-color: #03aa6f;
+  color: white;
+  width: 290px;
+  height: 50px;
+  font-size: 24px;
+}
+
+/* MEDIA QUERY*/
+@media (max-width: 576px) {
+  .ray-logo {
+    width: 150px;
+  }
+}

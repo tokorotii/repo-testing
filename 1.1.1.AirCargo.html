@@ -86,7 +86,7 @@
               </ul>
             </li>
             <li class="nav-item my-auto mx-4">
-              <a class="nav-link" href="index.html"><img src="1.1.1 Air Cargo/icon/ikon-pala.png" alt="login icon" style="width: 50px" /></a>
+              <a class="nav-link" href="index.html"><img class="login-icon" src="1.1.1 Air Cargo/icon/ikon-pala.png" alt="login icon" /></a>
             </li>
           </ul>
         </div>
@@ -95,15 +95,15 @@
     <!-- NAV -->
 
     <div class="container-fluid" style="width: 95%">
-      <p style="font-size: 36px; margin-top: 75px">Rate Simulation</p>
+      <p class="title">Rate Simulation</p>
 
       <!-- Air Cargo -->
       <section>
         <div>
-          <p class="mb-4 mt-5" style="font-size: 32px">Air Cargo</p>
+          <p class="mb-4 mt-5 header">Air Cargo</p>
           <div class="row mb-3">
-            <label class="col-2 col-form-label" style="font-size: 27px">Country</label>
-            <div class="col-3">
+            <label class="col-lg-2 col-md-3 col-form-label label">Country</label>
+            <div class="col-lg-3 col-md-4">
               <select id="air-cargo-country" name="country" class="form-select" required>
                 <option value="" disabled selected>Select Country</option>
                 <option value="JAPAN">JAPAN</option>
@@ -115,16 +115,16 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-2 col-form-label" style="font-size: 27px">Airport</label>
-            <div class="col-3 my-auto">
+            <label class="col-lg-2 col-md-3 col-form-label label">Airport</label>
+            <div class="col-lg-3 col-md-4 my-auto">
               <select id="air-cargo-airport" name="airport" class="form-select" required>
                 <option value="" disabled selected>Select Airport</option>
               </select>
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-2 col-form-label" style="font-size: 27px">Flight</label>
-            <div class="col-3 my-auto">
+            <label class="col-lg-2 col-md-3 col-form-label label">Flight</label>
+            <div class="col-lg-3 col-md-4 my-auto">
               <select id="air-cargo-flight" name="flight" class="form-select" required>
                 <option value="" selected disabled>Select Flight</option>
               </select>
@@ -136,8 +136,8 @@
           <p class="mb-3 mt-5 text-danger">*Minimum weight is 45 KG</p>
           <!-- SIMULATE Air Cargo -->
           <div class="row disini pt-3">
-            <div class="col-3 g-0">
-              <div class="card my-1 mx-1" style="border-radius: 20px; border-top: none; box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45)">
+            <div class="col-lg-3 col-md-4 g-0">
+              <div class="card my-1 mx-1 card-calculate">
                 <div class="card-body">
                   <div class="row pb-2">
                     <div class="col"><h5 class="card-title fw-bold pb-3">Package</h5></div>
@@ -156,16 +156,20 @@
           </div>
           <!-- SIMULATE Air Cargo -->
           <div class="row pt-3">
-            <div class="col-2"><button type="button" class="btn" id="calculate" style="background-color: #699bf7; color: white; width: 290px; height: 50px; font-size: 24px">Calculate</button></div>
-            <div class="col-2"><button type="button" class="btn tambah" style="border-width: 2px; border-color: #699bf7; color: #699bf7; width: 290px; height: 50px; font-size: 24px">Add Package</button></div>
+            <div class="text-center text-sm-start col-md-5 col-lg-2 pb-1">
+              <button type="button" class="btn" id="calculate">Calculate</button>
+            </div>
+            <div class="text-center text-sm-start col-md-5 col-lg-2">
+              <button type="button" class="btn tambah">Add Package</button>
+            </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-lg-8">
             <div class="row pt-5" id="print">
-              <label style="font-size: 36px">Result</label>
-              <div class="card" style="border-width: 3px; border-color: black">
-                <div class="card-body" style="font-size: 21px">
+              <label class="header">Result</label>
+              <div class="card card-result">
+                <div class="card-body font-result">
                   <div class="row">
                     <div class="col-sm-5">Country</div>
                     <div class="col-sm-1">:</div>
@@ -213,8 +217,8 @@
               <!-- <div class="col-2">
             <button type="button" class="btn" style="width: 290px; height: 50px; font-size: 24px">Simulate Again</button>
           </div> -->
-              <div class="col-2">
-                <button type="button" class="btn" onclick="printDiv('print')" style="background-color: #03aa6f; color: white; width: 290px; height: 50px; font-size: 24px">Print</button>
+              <div class="text-center text-sm-start col-md-5 col-lg-2">
+                <button type="button" class="btn print-btn" onclick="printDiv('print')">Print</button>
               </div>
             </div>
           </div>
