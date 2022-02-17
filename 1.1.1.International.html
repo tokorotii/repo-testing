@@ -111,7 +111,7 @@
               </ul>
             </li>
             <li class="nav-item my-auto mx-4 dropdown">
-              <a class="nav-link dropdown-togglex" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"><img src="Front Page/icon/ikon-pala.png" alt="login icon" style="width: 50px" /></a>
+              <a class="nav-link dropdown-togglex" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"><img class="login-icon" src="Front Page/icon/ikon-pala.png" alt="login icon" /></a>
               <ul class="dropdown-menu animate slideIn">
                 <li><a class="dropdown-item fw-bolder" href="index.html">Logout</a></li>
               </ul>
@@ -129,10 +129,10 @@
       <!-- RJM -->
       <section>
         <div>
-          <p class="col-6 text-center header1 mb-5">Rayspeed Jalur Mancanegara Worldwide (<span style="color: #172b85">SOS</span>RJM)</p>
+          <p class="col-sm-6 text-center header1 mb-5">Rayspeed Jalur Mancanegara Worldwide (<span style="color: #172b85">SOS</span>RJM)</p>
           <div class="row mb-3">
-            <label class="col-2 col-form-label f27">Destination</label>
-            <div class="col-3">
+            <label class="col-lg-2 col-md-3 col-form-label label">Destination</label>
+            <div class="col-lg-3 col-md-4">
               <select class="form-control select2" id="destination_rjm" name="destination_rjm" tabindex="-1" style="width: 100%" required>
                 <option value="" disabled selected>Choose Destination</option>
                 <option value="AFGHANISTAN">AFGHANISTAN</option>
@@ -375,21 +375,21 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-2 col-form-label f27">City</label>
-            <div class="col-3 my-auto">
+            <label class="col-lg-2 col-md-3 col-form-label label">City</label>
+            <div class="col-lg-3 col-md-4 my-auto">
               <input class="form-control" type="text" id="city_name" name="city_name" />
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-2 col-form-label f27">Zip Code</label>
-            <div class="col-3 my-auto">
+            <label class="col-lg-2 col-md-3 col-form-label label">Zip Code</label>
+            <div class="col-lg-3 col-md-4 my-auto">
               <input class="form-control" type="text" id="post_code" name="post_code" />
             </div>
           </div>
           <!-- <div class="row mb-3">
-            <label class="col-2 col-form-label f27">Type</label>
+            <label class="col-2 col-form-label label">Type</label>
             <div class="col-3">
-              <select class="form-select" id="service_rjm" name="service_rjm" style="font-size: 21px" required>
+              <select class="form-select" id="service_rjm" name="service_rjm" required>
                 <option selected disabled>Choose Destination</option>
                 <option value="D">Document</option>
                 <option value="ND">Package</option>
@@ -398,9 +398,9 @@
           </div> -->
           <!-- SIMULATE RJM -->
           <div class="row disini_rjm pt-3">
-            <div class="col-3 g-0">
-              <div class="card my-1 mx-1" style="border-radius: 20px; border-top: none; box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45)">
-                <div class="card-body">
+            <div class="col-lg-3 col-md-6 g-0">
+              <div class="card card-calculate my-1 mx-1">
+                <div class="card-body card-result">
                   <div class="row pb-2">
                     <div class="col"><h5 class="card-title fw-bold pb-3">Package</h5></div>
                   </div>
@@ -418,60 +418,60 @@
           </div>
           <!-- SIMULATE RJM -->
           <div class="row pt-3">
-            <div class="col-2"><button type="button" class="btn" id="calculate_rjm" style="background-color: #699bf7; color: white; width: 290px; height: 50px; font-size: 24px">Calculate</button></div>
-            <div class="col-2"><button type="button" class="btn tambah_rjm" style="border-width: 2px; border-color: #699bf7; color: #699bf7; width: 290px; height: 50px; font-size: 24px">Add Package</button></div>
+            <div class="text-center text-sm-start col-md-5 col-lg-2 pb-1"><button type="button" class="btn" id="calculate_rjm">Calculate</button></div>
+            <div class="text-center text-sm-start col-md-5 col-lg-2"><button type="button" class="btn tambah_rjm">Add Package</button></div>
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-lg-8">
             <div class="row pt-5" id="print_rjm">
-              <label style="font-size: 36px">Result SOSRJM</label>
-              <div class="card" style="border-width: 3px; border-color: black">
-                <div class="card-body f24">
+              <label class="header">Result SOSRJM</label>
+              <div class="card card-result">
+                <div class="card-body font-result">
                   <div class="row">
-                    <div class="col-sm-4">Total Packages</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="tp_rjm" name="tp_rjm"></div>
+                    <div class="col-md-4">Total Packages</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tp_rjm" name="tp_rjm"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Chargeable Weight (Kg)</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="cw_rjm" name="cw_rjm"></div>
+                    <div class="col-md-4">Chargeable Weight (Kg)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="cw_rjm" name="cw_rjm"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Freight Charges</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="fc_rjm" name="fc_rjm"></div>
+                    <div class="col-md-4">Freight Charges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fc_rjm" name="fc_rjm"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">ESS</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="ess_rjm" name="ess_rjm"></div>
+                    <div class="col-md-4">ESS</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ess_rjm" name="ess_rjm"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Overweight Subcharges</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="os_rjm" name="os_rjm"></div>
+                    <div class="col-md-4">Overweight Subcharges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="os_rjm" name="os_rjm"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Remote Area</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="ra_rjm" name="ra_rjm"></div>
+                    <div class="col-md-4">Remote Area</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ra_rjm" name="ra_rjm"></div>
                   </div>
                   <div class="row pt-2 mb-2">
-                    <div class="col-sm-4">Fuel Surcharge (...%)</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="fs_rjm" name="fs_rjm"></div>
+                    <div class="col-md-4">Fuel Surcharge (...%)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fs_rjm" name="fs_rjm"></div>
                   </div>
                   <div class="row pt-2" style="border-top: solid">
-                    <div class="col-sm-4">Total before VAT 1%</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="tbv_rjm" name="tbv_rjm"></div>
+                    <div class="col-md-4">Total before VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tbv_rjm" name="tbv_rjm"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Total after VAT 1%</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="tav_rjm" name="tav_rjm"></div>
+                    <div class="col-md-4">Total after VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tav_rjm" name="tav_rjm"></div>
                   </div>
                 </div>
               </div>
@@ -480,8 +480,8 @@
               <!-- <div class="col-2">
             <button type="button" class="btn" style="width: 290px; height: 50px; font-size: 24px">Simulate Again</button>
           </div> -->
-              <div class="col-2">
-                <button type="button" class="btn" onclick="printDiv('print_rjm')" style="background-color: #03aa6f; color: white; width: 290px; height: 50px; font-size: 24px">Print</button>
+              <div class="text-center col-md-5 col-lg-2">
+                <button type="button" class="btn print-result" onclick="printDiv('print_rjm')">Print</button>
               </div>
             </div>
           </div>
@@ -491,12 +491,12 @@
 
       <!-- JFCC -->
       <section>
-        <p class="col-5 text-center mb-3" style="font-size: 32px; margin-top: 50px; background-color: #ea1616; color: white; border-radius: 5px">Japan First Class Courier (JFCC)</p>
-        <p class="col-4 mb-5 ps-2" style="color: #ea1616">JFCC is only for shipment with weight 45 kgs and above, otherwise please use SOSRJM Service</p>
+        <p class="col-md-6 col-lg-5  text-center mb-3 header2">Japan First Class Courier (JFCC)</p>
+        <p class="col-md-6 col-lg-5 mb-5 ps-2 text-danger note">JFCC is only for shipment with weight 45 kgs and above, otherwise please use SOSRJM Service</p>
         <div class="row mb-3">
-          <label class="col-2 col-form-label f27">Services</label>
-          <div class="col-3">
-            <select class="form-select" style="font-size: 21px" id="jfcc_type" name="jfcc_type">
+          <label class="col-lg-2 col-md-3 col-form-label label">Services</label>
+          <div class="col-lg-3 col-md-4">
+            <select class="form-select id="jfcc_type" name="jfcc_type">
               <option selected disabled>Choose Service</option>
               <option value="Door to Door">Door to Door</option>
               <option value="Door to Port">Door to Port</option>
@@ -504,17 +504,17 @@
           </div>
         </div>
         <div class="row mb-3">
-          <label class="col-2 col-form-label f27">Destination</label>
-          <div class="col-3">
-            <select class="form-select" id="destination_jfcc" name="destination_jfcc" style="font-size: 21px" required>
+          <label class="col-lg-2 col-md-3 col-form-label label">Destination</label>
+          <div class="col-lg-3 col-md-4">
+            <select class="form-select" id="destination_jfcc" name="destination_jfcc" required>
               <option selected disabled>Choose Destination</option>
             </select>
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-2 col-form-label flight f27">Flight</div>
-          <div class="col-3 flight">
-            <select class="form-select" id="flight" name="flight" style="font-size: 21px" required>
+          <div class="col-lg-2 col-md-3 col-form-label flight label">Flight</div>
+          <div class="col-lg-3 col-md-4 flight">
+            <select class="form-select" id="flight" name="flight" required>
               <option selected disabled>Choose Flight</option>
             </select>
           </div>
@@ -522,8 +522,8 @@
 
         <!-- SIMULATE JFCC -->
         <div class="row disini_jfcc pt-3">
-          <div class="col-3 g-0">
-            <div class="card my-1 mx-1" style="border-radius: 20px; border-top: none; box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45)">
+          <div class="col-lg-3 col-md-6 g-0">
+            <div class="card my-1 mx-1 card-calculate" >
               <div class="card-body">
                 <div class="row pb-2">
                   <div class="col"><h5 class="card-title fw-bold pb-3">Package</h5></div>
@@ -542,59 +542,59 @@
         </div>
         <!-- SIMULATE JFCC -->
         <div class="row pt-3">
-          <div class="col-2"><button type="submit" class="btn" id="calculate_jfcc" style="background-color: #699bf7; color: white; width: 290px; height: 50px; font-size: 24px">Calculate</button></div>
-          <div class="col-2"><button type="button" class="btn tambah_jfcc" style="border-width: 2px; border-color: #699bf7; color: #699bf7; width: 290px; height: 50px; font-size: 24px">Add Package</button></div>
+          <div class="text-center text-sm-start col-md-5 col-lg-2 pb-1"><button type="submit" class="btn" id="calculate_jfcc" >Calculate</button></div>
+          <div class="text-center text-sm-start col-md-5 col-lg-2"><button type="button" class="btn tambah_jfcc"  >Add Package</button></div>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-lg-8">
             <div class="row pt-5" id="print_jfcc">
-              <label style="font-size: 36px">Result JFCC</label>
-              <div class="card" style="border-width: 3px; border-color: black">
-                <div class="card-body f24">
+              <label class="header">Result JFCC</label>
+              <div class="card card-result" >
+                <div class="card-body font-result">
                   <div class="row">
-                    <div class="col-sm-4">Total Packages</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="tp_jfcc" name="tp_jfcc"></div>
+                    <div class="col-md-4">Total Packages</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tp_jfcc" name="tp_jfcc"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Chargeable Weight (Kg)</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="cw_jfcc" name="cw_jfcc"></div>
+                    <div class="col-md-4">Chargeable Weight (Kg)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="cw_jfcc" name="cw_jfcc"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Freight Charges</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="fc_jfcc" name="fc_jfcc"></div>
+                    <div class="col-md-4">Freight Charges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fc_jfcc" name="fc_jfcc"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">ESS</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="ess_jfcc" name="ess_jfcc"></div>
+                    <div class="col-md-4">ESS</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ess_jfcc" name="ess_jfcc"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Overweight Subcharges</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="os_jfcc" name="os_jfcc"></div>
+                    <div class="col-md-4">Overweight Subcharges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="os_jfcc" name="os_jfcc"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Remote Area</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="ra_jfcc" name="ra_jfcc"></div>
+                    <div class="col-md-4">Remote Area</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ra_jfcc" name="ra_jfcc"></div>
                   </div>
                   <div class="row pt-2 mb-2">
-                    <div class="col-sm-4">Fuel Surcharge (...%)</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="fs_jfcc" name="fs_jfcc"></div>
+                    <div class="col-md-4">Fuel Surcharge (...%)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fs_jfcc" name="fs_jfcc"></div>
                   </div>
                   <div class="row pt-2" style="border-top: solid">
-                    <div class="col-sm-4">Total before VAT 1%</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="tbv_jfcc" name="tbv_jfcc"></div>
+                    <div class="col-md-4">Total before VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tbv_jfcc" name="tbv_jfcc"></div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col-sm-4">Total after VAT 1%</div>
-                    <div class="col-sm-1">:</div>
-                    <div class="col-sm" id="tav_jfcc" name="tav_jfcc"></div>
+                    <div class="col-md-4">Total after VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tav_jfcc" name="tav_jfcc"></div>
                   </div>
                 </div>
               </div>
@@ -603,8 +603,8 @@
               <!-- <div class="col-2">
             <button type="button" class="btn" style="width: 290px; height: 50px; font-size: 24px">Simulate Again</button>
           </div> -->
-              <div class="col-2">
-                <button type="button" class="btn" onclick="printDiv('print_jfcc')" style="background-color: #03aa6f; color: white; width: 290px; height: 50px; font-size: 24px">Print</button>
+              <div class="text-center col-md-5 col-lg-2">
+                <button type="button" class="btn print-result mb-3" onclick="printDiv('print_jfcc')" >Print</button>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
 $(document).ready(function () {
   $("body").on("click", ".tambah_rjm", function () {
     var html = "";
-    html += '<div class="col-3 g-0 dihapus_rjm">';
+    html += '<div class="col-lg-3 col-md-6 g-0 dihapus_rjm">';
     html += '<div class="card my-1 mx-1" style="border-radius: 20px; border-top: none; box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45)">';
     html += '<div class="card-body">';
     html += '<div class="row pb-2">';
@@ -40,7 +40,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $("body").on("click", ".tambah_jfcc", function () {
     var html = "";
-    html += '<div class="col-3 g-0 dihapus_jfcc">';
+    html += '<div class="col-lg-3 col-md-6 g-0 dihapus_jfcc">';
     html += '<div class="card my-1 mx-1" style="border-radius: 20px; border-top: none; box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45)">';
     html += '<div class="card-body">';
     html += '<div class="row pb-2">';

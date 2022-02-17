@@ -9,10 +9,19 @@ nav {
   font: normal normal normal 14px/1 FontAwesome;
   content: "\f107" !important;
 }
+.login-icon {
+  width: 50px;
+}
 
 .bb {
   border-bottom: solid;
   border-width: 2px;
+}
+
+@media (max-width: 576px) {
+  .ray-logo {
+    width: 150px;
+  }
 }
 
 /* ANIMATION */
