@@ -1,50 +1,14 @@
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
+  .section-nav {
+    margin-right: 15px;
+    font-size: 18px !important;
+  }
+  main {
+    grid-template-columns: 1fr 0.75fr;
+  }
+}
+@media (max-width: 767px) {
   #nav {
     display: none;
   }
-  /* body {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-  }
-  .head {
-    align-items: center;
-    background-color: #699bf7;
-    color: white;
-    height: 60px;
-    padding-left: 45px;
-    font-size: 18px;
-  }
-
-  .title {
-    margin-left: 40px;
-    margin-top: 60px;
-    margin-bottom: 35px;
-    font-size: 21px;
-  }
-
-  .form-control,
-  .form-select {
-    border-color: black;
-    border-width: 2px;
-  }
-
-  .tampil-satu,
-  .tampil-dua,
-  .tampil-tiga,
-  .tampil-empat {
-    display: none;
-  }
-  .baten1 {
-    background-color: #03aa6f;
-    color: white;
-    width: 150px;
-    height: 65px;
-  }
-  .baten2 {
-    border-color: black;
-    border-width: 3px;
-    width: 150px;
-    height: 65px;
-  }*/
 }

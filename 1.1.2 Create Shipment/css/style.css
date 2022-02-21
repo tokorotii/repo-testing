@@ -11,6 +11,10 @@ body {
   font-size: 24px;
 }
 
+#nav {
+  margin-right: 25px;
+}
+
 .title {
   margin-left: 80px;
   margin-top: 60px;
