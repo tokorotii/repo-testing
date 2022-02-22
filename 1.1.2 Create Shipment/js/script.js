@@ -31,9 +31,9 @@ $(document).ready(function () {
     let insured_shipper = $("#insured_shipper option:selected").val();
 
     if (insured_shipper != "Yes by Shipper") {
-      $("#shippinf-5").hide();
+      $("#append_insurance").hide();
     } else {
-      $("#shippinf-5").show();
+      $("#append_insurance").show();
     }
   });
 
@@ -47,10 +47,10 @@ $(document).ready(function () {
     }
   });
 
-  $("#insured_shipper").change(function () {
-    $("#insurance").prop("disabled", $(this).val() == "no");
-    // $("#hide").hide();
-  });
+  // $("#insured_shipper").change(function () {
+  //   $("#insurance").prop("disabled", $(this).val() == "no");
+  //   // $("#hide").hide();
+  // });
 
   $("#other_additional4").on("change", function () {
     let other_additional4 = $("#other_additional4 option:selected").val();
