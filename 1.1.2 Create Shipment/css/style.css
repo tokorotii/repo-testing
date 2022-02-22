@@ -11,10 +11,6 @@ body {
   font-size: 24px;
 }
 
-#nav {
-  margin-right: 25px;
-}
-
 .title {
   margin-left: 80px;
   margin-top: 60px;
@@ -48,4 +44,10 @@ body {
   border-width: 3px;
   width: 300px;
   height: 65px;
+}
+.flight {
+  display: none;
+}
+.jfcc {
+  display: none;
 }

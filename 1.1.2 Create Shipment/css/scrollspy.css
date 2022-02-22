@@ -3,27 +3,23 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 2. Make nav sticky */
-main > #nav {
-  position: sticky;
-  top: 3rem;
-  align-self: start;
-  font-size: 24px;
-}
-
 /* Sidebar Navigation */
 .section-nav {
   padding-left: 0;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-top: 25px;
   padding-bottom: 25px;
+  margin-right: -10px !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
 }
 
 .section-nav a {
   text-decoration: none;
   display: block;
-  padding: 0.125rem 0;
+  padding: 0.25rem;
   color: black;
 }
 
@@ -32,8 +28,15 @@ ol {
   list-style: none;
 }
 
-/** page layout **/
-main {
-  display: grid;
-  grid-template-columns: 1fr 25em;
+@media (min-width: 769px) {
+  #nav {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 1600px) {
+  #nav {
+    margin-right: 100px !important;
+    font-size: 21px;
+  }
 }
