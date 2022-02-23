@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="css/billing_nav.css" />
+    <link rel="stylesheet" href="css/billing_style.css" />
+
+    <title>Shipment Recapitulation & Billing Summary</title>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid" style="width: 95%">
+        <a class="navbar-brand" href="#"><img class="ray-logo" src="images/logo white 1edited.png" alt="Rayspeed logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link" href="FrontPage.html">Home</a>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Courier </a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.2 CreateShipment.html">Create Shipment</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Upload File</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">Print AWB</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Price Simulation </a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.1.International.html">International Courier</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.1.Domestic.html">Domestic Courier</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.1.AirCargo.html">International Air Cargo</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">International Sea Cargo</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Shipment Summary </a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.3.Manifest.html">Manifesting</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">Tracking</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4">
+              <a class="nav-link" href="#">Billing Summary</a>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Download Quotation & SLA</a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (RJM & SOS)</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (JFCC)</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (Air Cargo)</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (Sea Cargo)</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">Download SLA (Service Level Agreement)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4">
+              <a class="nav-link" href="#"><img src="images/ikon-pala.png" alt="login icon" style="width: 50px" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV -->
+    <!-- HEAD -->
+    <div class="container-fluid pt-3">
+      <div class="row justify-content-center title">Shipment Recapitulation & Billing Summary</div>
+      <div class="row justify-content-center">
+        <div class="col-2 text-end">From : 13 September 2021</div>
+        <div class="col-2 text-start">From : 13 September 2021</div>
+      </div>
+    </div>
+
+    <!-- HEAD -->
+
+    <!-- TABLE -->
+    <div class="row">
+      <div class="column">
+        <table class="table table-condensed table-bordered table-hover display nowrap" id="Summary">
+          <thead>
+            <tr>
+              <th colspan="16" class="tengah">SHIPMENT DETAILS</th>
+            </tr>
+            <tr>
+              <th rowspan="2" colspan="1" class="tengah">No</th>
+              <th rowspan="2" colspan="1" class="tengah">Date</th>
+              <th rowspan="2" colspan="1" class="tengah">AWB No</th>
+              <th rowspan="2" colspan="1" class="tengah">Service</th>
+              <th rowspan="2" colspan="1" class="tengah">Shipper reference</th>
+              <th rowspan="2" colspan="1" class="tengah">Destination</th>
+              <th rowspan="2" colspan="1" class="tengah">Consignee</th>
+              <th rowspan="2" colspan="1" class="tengah">Details</th>
+              <th rowspan="1" colspan="1" class="tengah">Type</th>
+              <th rowspan="1" colspan="1" class="tengah">Category</th>
+              <th rowspan="1" colspan="1" class="tengah">Total QTY</th>
+              <th rowspan="1" colspan="1" class="tengah">Total WT</th>
+              <th rowspan="1" colspan="1" class="tengah">Total VOL</th>
+              <th rowspan="1" colspan="3" class="tengah">Other Services</th>
+            </tr>
+            <tr>
+              <th class="tengah">DOC / PKG</th>
+              <th class="tengah">F / FS</th>
+              <th class="tengah">PKG</th>
+              <th class="tengah">KG</th>
+              <th class="tengah">M3</th>
+              <th class="tengah">ISPM15</th>
+              <th class="tengah">COO</th>
+              <th class="tengah">Packing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tengah">1</td>
+              <td class="tengah">10-Sep-21</td>
+              <td class="tengah">RAY8881234567890</td>
+              <td class="tengah">SOS</td>
+              <td class="tengah">001/DDL/1</td>
+              <td class="tengah">SINGAPORE</td>
+              <td class="tengah">-</td>
+              <td class="tengah">-</td>
+              <td class="tengah">PKG</td>
+              <td class="tengah">F</td>
+              <td class="tengah">2</td>
+              <td class="tengah">30</td>
+              <td class="tengah">0.2</td>
+              <td class="tengah">Y</td>
+              <td class="tengah">NO</td>
+              <td class="tengah">Y</td>
+            </tr>
+            <tr>
+              <td class="tengah">1</td>
+              <td class="tengah">10-Sep-21</td>
+              <td class="tengah">RAY8881234567890</td>
+              <td class="tengah">SOS</td>
+              <td class="tengah">001/DDL/1</td>
+              <td class="tengah">SINGAPORE</td>
+              <td class="tengah">-</td>
+              <td class="tengah">-</td>
+              <td class="tengah">PKG</td>
+              <td class="tengah">F</td>
+              <td class="tengah">2</td>
+              <td class="tengah">30</td>
+              <td class="tengah">0.2</td>
+              <td class="tengah">Y</td>
+              <td class="tengah">NO</td>
+              <td class="tengah">Y</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <table class="table table-condensed table-bordered table-hover">
+          <thead>
+            <tr>
+              <th colspan="15" class="tengah">BILLING PROJECTION</th>
+            </tr>
+            <tr>
+              <th rowspan="1" colspan="1" class="tengah">Final CH Weight</th>
+              <th rowspan="1" colspan="1" class="tengah">Total Freight</th>
+              <th rowspan="1" colspan="4" class="tengah">Other Services (IDR)</th>
+              <th rowspan="1" colspan="1" class="tengah">Total PROJ BILL</th>
+            </tr>
+            <tr>
+              <th class="tengah">KG</th>
+              <th class="tengah">IDR</th>
+              <th class="tengah">ISPM15</th>
+              <th class="tengah">COO</th>
+              <th class="tengah">Packing</th>
+              <th class="tengah">PE</th>
+              <th class="tengah">IDR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tengah">25</td>
+              <td class="tengah">1290000</td>
+              <td class="tengah">550000</td>
+              <td class="tengah">-</td>
+              <td class="tengah">750000</td>
+              <td class="tengah">-</td>
+              <td class="tengah">2590000</td>
+            </tr>
+            <tr>
+              <td class="tengah">25</td>
+              <td class="tengah">1290000</td>
+              <td class="tengah">550000</td>
+              <td class="tengah">-</td>
+              <td class="tengah">750000</td>
+              <td class="tengah">-</td>
+              <td class="tengah">2590000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- TABLE -->
+
+    <div class="">
+      <button class="btn btn-primary mb-3" type="button">Export to Excel</button>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+@media (max-width: 1024px) {
+  .section-nav {
+    margin-right: 15px;
+    font-size: 18px !important;
+  }
+  main {
+    grid-template-columns: 1fr 0.75fr;
+  }
+}
+@media (max-width: 769px) {
+  .title {
+    margin-left: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+  .head {
+    padding-left: 25px;
+  }
+  .baten1,
+  .baten2 {
+    width: 200px;
+  }
+}
+@media (max-width: 450px) {
+  .head {
+    padding-left: 16px;
+  }
+  .baten1,
+  .baten2 {
+    width: 250px;
+  }
+  .section-nav {
+    display: none;
+  }
+}

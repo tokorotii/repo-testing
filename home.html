@@ -20,8 +20,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="Front Page/css/nav.css" />
-    <link rel="stylesheet" href="Front Page/css/style sm.css" />
+    <link rel="stylesheet" href="css/nav_home.css" />
+    <link rel="stylesheet" href="css/style_home.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
         }
 
         .select2-container--default .select2-selection--single .select2-selection__rendered {
-          font-size: 18px;
+          font-size: 21px;
           line-height: 200%;
           font-weight: normal;
         }
@@ -63,14 +63,15 @@
 
     <title>Front Page</title>
   </head>
-  <body style="background-image: url('Front Page/icon/corporate2.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed">
+  <body style="background-image: url('images/corporate2.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed">
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid" style="width: 95%">
-        <a class="navbar-brand" href="#"><img class="ray-logo" src="Front Page/icon/logo white 1edited.png" alt="Rayspeed logo" /></a>
+        <a class="navbar-brand" href="#"><img class="ray-logo" src="images/logo white 1edited.png" alt="Rayspeed logo" /></a>
         <li class="nav-item dropdown ms-auto d-flex align-items-center d-lg-none d-xl-none" style="list-style: none">
           <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target=".feedback">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <span class="feed_txt">Feedback</span>
+            <svg class="feed_img" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.33333 8.4882H7.66667C7.851 8.4882 8 8.33887 8 8.15487C8 7.97087 7.851 7.82153 7.66667 7.82153H3.33333C3.149 7.82153 3 7.97087 3 8.15487C3 8.33887 3.149 8.4882 3.33333 8.4882Z" fill="white" />
               <path d="M12 9.82153H3.33333C3.149 9.82153 3 9.97087 3 10.1549C3 10.3389 3.149 10.4882 3.33333 10.4882H12C12.1843 10.4882 12.3333 10.3389 12.3333 10.1549C12.3333 9.97087 12.1843 9.82153 12 9.82153Z" fill="white" />
               <path d="M12 11.8215H3.33333C3.149 11.8215 3 11.9709 3 12.1549C3 12.3389 3.149 12.4882 3.33333 12.4882H12C12.1843 12.4882 12.3333 12.3389 12.3333 12.1549C12.3333 11.9709 12.1843 11.8215 12 11.8215Z" fill="white" />
@@ -127,7 +128,7 @@
               </ul>
             </li>
             <li class="nav-item my-auto mx-4 dropdown">
-              <a class="nav-link dropdown-togglex" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"><img src="Front Page/icon/ikon-pala.png" alt="login icon" style="width: 50px" /></a>
+              <a class="nav-link dropdown-togglex" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"><img src="images/ikon-pala.png" alt="login icon" style="width: 50px" /></a>
               <ul class="dropdown-menu animate slideIn">
                 <li><a class="dropdown-item fw-bolder" href="index.html">Logout</a></li>
               </ul>
@@ -954,6 +955,10 @@
         document.body.innerHTML = originalContents;
       }
     </script>
+
+    <script src="js/script_home.js"></script>
+    <script src="js/jfcc.js"></script>
+
     <script type="text/javascript">
       $(document).ready(function () {
         $("#form-simulation-corporate").on("submit", function (e) {
@@ -962,32 +967,20 @@
           let data = $("#form-simulation-corporate").serialize();
           if (serviceType == "SOSRJM") {
             $.ajax({
-              url: "simulation_rjm_sos_ajax.php?m=RJM-SOS",
+              url: "simulation_sosrjm_ajax.php?m=RJM-SOS",
               data: data,
               method: "get",
               cache: false,
               dataType: "json",
               success: function (hasil) {
                 if (hasil.sukses === true) {
-                  $("#product_sosrjm").text(hasil.product);
-                  $("#destination_sosrjm").text(hasil.destination);
-                  $("#actual_sosrjm").text(hasil.actual_weight);
-                  $("#volume_sosrjm").text(hasil.actual_volume);
-                  $("#cw_sosrjm").text(hasil.cw);
-                  $("#remote_sosrjm").text(hasil.remote);
-                  $("#total_sosrjm").text(hasil.total);
-
-                  $("#tp_rjm").text(hasil.tp_rjm);
-                  $("#cw_rjm").text(hasil.cw_rjm);
-                  $("#fc_rjm").text(hasil.fc_rjm);
-                  $("#ess_rjm").text(hasil.ess_rjm);
-                  $("#os_rjm").text(hasil.os_rjm);
-                  $("#ra_rjm").text(hasil.ra_rjm);
-                  $("#fs").text(hasil.fs_dhl);
-                  $("#fs_rjm").text(hasil.fs_rjm);
-                  $("#tbv_rjm").text(hasil.tbv_rjm);
-                  $("#tav_rjm").text(hasil.tav_rjm);
-                } else {
+                  $("#product").text(hasil.product);
+                  $("#destination").text(hasil.destination);
+                  $("#actual").text(hasil.actual_weight);
+                  $("#volume").text(hasil.actual_volume);
+                  $("#cw").text(hasil.cw);
+                  $("#remote").text(hasil.remote);
+                  $("#total").text(hasil.total);
                 }
               },
             });
@@ -1000,27 +993,105 @@
               dataType: "json",
               success: function (hasil) {
                 if (hasil.sukses === true) {
-                  console.log(hasil);
-                  $("#tp_jfcc").text(hasil.tp_jfcc);
-                  $("#cw_jfcc").text(hasil.cw_jfcc);
-                  $("#fc_jfcc").text(hasil.fc_jfcc);
-                  $("#ess_jfcc").text(hasil.ess_jfcc);
-                  $("#os_jfcc").text(hasil.os_jfcc);
-                  $("#ra_jfcc").text(hasil.ra_jfcc);
-                  $("#fs_jfcc_persen").text(hasil.fs_dhl);
-                  $("#fs_jfcc").text(hasil.fs_jfcc);
-                  $("#tbv_jfcc").text(hasil.tbv_jfcc);
-                  $("#tav_jfcc").text(hasil.tav_jfcc);
-                } else {
+                  $("#product").text(hasil.product);
+                  $("#destination").text(hasil.destination);
+                  $("#actual").text(hasil.actual_weight);
+                  $("#volume").text(hasil.actual_volume);
+                  $("#cw").text(hasil.cw);
+                  $("#remote").text(hasil.remote);
+                  $("#total").text(hasil.total);
                 }
               },
             });
           }
         });
+        $("#air-cargo-country").on("change", function () {
+          let country = $("#air-cargo-country option:selected").val();
+          $.ajax({
+            url: "simulation_air_cargo_selection.php?m=selectAirport",
+            type: "post",
+            cache: false,
+            data: { country: country },
+            success: function (response) {
+              $("#air-cargo-airport").html(response);
+              $("#air-cargo-flight").html('<option value="" selected disabled>Select Flight</option>');
+              $("#info").html("");
+            },
+          });
+        });
+        $("#air-cargo-airport").on("change", function () {
+          let country = $("#air-cargo-country option:selected").val();
+          let airport = $("#air-cargo-airport option:selected").val();
+          $.ajax({
+            url: "simulation_air_cargo_selection.php?m=selectFlight",
+            type: "post",
+            cache: false,
+            data: { country: country, airport: airport },
+            success: function (response) {
+              $("#air-cargo-flight").html(response);
+            },
+          });
+        });
+        $("#air-cargo-flight").on("change", function () {
+          let directVia = $("#air-cargo-flight option:selected").data("direct-via");
+          let route = $("#air-cargo-flight option:selected").data("route");
+          let etd = $("#air-cargo-flight option:selected").data("etd");
+          $("#info").html(directVia + ", " + route + ", " + etd);
+        });
+        $("#ps-air-cargo").on("submit", function (e) {
+          e.preventDefault();
+          let data = $("#ps-air-cargo").serialize();
+          $.ajax({
+            url: "simulation_air_cargo_ajax.php",
+            data: data,
+            method: "get",
+            cache: false,
+            dataType: "json",
+            success: function (hasil) {
+              if (hasil.sukses === true) {
+                $(".product-air-cargo").text(hasil.product);
+                $(".destination-air-cargo").text(hasil.destination);
+                $(".weight-air-cargo").text(hasil.actual_weight);
+                $(".volume-air-cargo").text(hasil.actual_volume);
+                $(".cw-air-cargo").text(hasil.cw);
+                $(".remote-area-air-cargo").text(hasil.remote);
+                $(".b4-vat-air-cargo").text(hasil.total);
+              }
+            },
+          });
+        });
+        $("#destination-domestik").on("keyup", function () {
+          let service = $("#service_type_dom option:selected").val();
+          $("#destination-domestik").autocomplete({
+            source: "simulation_domestic_destination.php?service=" + service,
+            minLength: 4,
+          });
+        });
+        $("#ps-domestic").on("submit", function (e) {
+          e.preventDefault();
+          let data = $("#ps-domestic").serialize();
+          $.ajax({
+            url: "simulation_domestic_ajax.php",
+            data: data,
+            method: "get",
+            cache: false,
+            dataType: "json",
+            success: function (hasil) {
+              if (hasil.sukses === true) {
+                $(".product-domestic").text(hasil.product);
+                $(".province-domestic").text(hasil.province);
+                $(".city-domestic").text(hasil.city);
+                $(".district-domestic").text(hasil.district);
+                $(".weight-domestic").text(hasil.actual_weight);
+                $(".volume-domestic").text(hasil.actual_volume);
+                $(".cw-domestic").text(hasil.cw);
+                $(".b4-tax-domestic").text(hasil.total);
+              }
+            },
+          });
+        });
       });
     </script>
-    <script src="Front Page/js/script.js"></script>
-    <script src="Front Page/js/jfcc.js"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

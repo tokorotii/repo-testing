@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="css/simulation_nav.css" />
+    <link rel="stylesheet" href="css/simulation_new2.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+      .flight {
+        display: none;
+      }
+      @media print {
+        body {
+          zoom: 80%;
+        }
+      }
+
+      .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 46px;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: 26px;
+        padding-top: 10px;
+      }
+
+      .select2-container--default .select2-selection--single {
+        border: 2px solid black;
+        border-radius: 4px;
+        height: 46px;
+      }
+
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 21px;
+        line-height: 200%;
+        font-weight: normal;
+        color: black;
+      }
+    </style>
+
+    <title>Price Simulation RJM & JFCC</title>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid" style="width: 95%">
+        <a class="navbar-brand" href="#"><img class="ray-logo" src="images/logo white 1edited.png" alt="Rayspeed logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link" href="FrontPage.html">Home</a>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Courier </a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.2 CreateShipment.html">Create Shipment</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Upload File</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">Print AWB</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Price Simulation </a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="#">International Courier</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.1.Domestic.html">Domestic Courier</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.1.AirCargo.html">International Air Cargo</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">International Sea Cargo</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Shipment Summary </a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="1.1.3.Manifest.html">Manifesting</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">Tracking</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4">
+              <a class="nav-link" href="1.1.3.Billing.html">Billing Summary</a>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Download Quotation & SLA</a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (SOSRJM)</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (JFCC)</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (Air Cargo)</a></li>
+                <li><a class="dropdown-item fw-bolder bb" href="#">Download Quotation (Sea Cargo)</a></li>
+                <li><a class="dropdown-item fw-bolder" href="#">Download SLA (Service Level Agreement)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item my-auto mx-4 dropdown">
+              <a class="nav-link dropdown-togglex" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"><img class="login-icon" src="images/ikon-pala.png" alt="login icon" /></a>
+              <ul class="dropdown-menu animate slideIn">
+                <li><a class="dropdown-item fw-bolder" href="index.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV -->
+    <!-- NAV -->
+
+    <div class="container-fluid" style="width: 95%">
+      <p class="title">Rate Simulation</p>
+
+      <!-- RJM -->
+      <section>
+        <div>
+          <p class="col-sm-6 text-center header1 mb-5">Rayspeed Jalur Mancanegara Worldwide (<span style="color: #172b85">SOS</span>RJM)</p>
+          <div class="row mb-3">
+            <label class="col-lg-2 col-md-3 col-form-label label">Destination</label>
+            <div class="col-lg-3 col-md-4">
+              <select class="form-control select2" id="destination_rjm" name="destination_rjm" tabindex="-1" style="width: 100%" required>
+                <option value="" disabled selected>Choose Destination</option>
+                <option value="AFGHANISTAN">AFGHANISTAN</option>
+                <option value="ALBANIA">ALBANIA</option>
+                <option value="ALGERIA">ALGERIA</option>
+                <option value="AMERICAN SAMOA">AMERICAN SAMOA</option>
+                <option value="ANDORRA">ANDORRA</option>
+                <option value="ANGOLA">ANGOLA</option>
+                <option value="ANGUILLA">ANGUILLA</option>
+                <option value="ANTIGUA">ANTIGUA</option>
+                <option value="ARGENTINA">ARGENTINA</option>
+                <option value="ARMENIA">ARMENIA</option>
+                <option value="ARUBA">ARUBA</option>
+                <option value="AUSTRALIA">AUSTRALIA</option>
+                <option value="AUSTRIA">AUSTRIA</option>
+                <option value="AZERBAIJAN">AZERBAIJAN</option>
+                <option value="BAHAMAS">BAHAMAS</option>
+                <option value="BAHRAIN">BAHRAIN</option>
+                <option value="BANGLADESH">BANGLADESH</option>
+                <option value="BARBADOS">BARBADOS</option>
+                <option value="BELARUS">BELARUS</option>
+                <option value="BELGIUM">BELGIUM</option>
+                <option value="BELIZE">BELIZE</option>
+                <option value="BENIN">BENIN</option>
+                <option value="BERMUDA">BERMUDA</option>
+                <option value="BHUTAN">BHUTAN</option>
+                <option value="BOLIVIA">BOLIVIA</option>
+                <option value="BONAIRE">BONAIRE</option>
+                <option value="BOSNIA AND HERZEGOVINA">BOSNIA AND HERZEGOVINA</option>
+                <option value="BOTSWANA">BOTSWANA</option>
+                <option value="BRAZIL">BRAZIL</option>
+                <option value="BRUNEI">BRUNEI</option>
+                <option value="BULGARIA">BULGARIA</option>
+                <option value="BURKINA FASO">BURKINA FASO</option>
+                <option value="BURUNDI">BURUNDI</option>
+                <option value="CAMBODIA">CAMBODIA</option>
+                <option value="CAMEROON">CAMEROON</option>
+                <option value="CANADA">CANADA</option>
+                <option value="CANARY ISLANDS">CANARY ISLANDS</option>
+                <option value="CAPE VERDE">CAPE VERDE</option>
+                <option value="CAYMAN ISLANDS">CAYMAN ISLANDS</option>
+                <option value="CENTRAL AFRICAN">CENTRAL AFRICAN</option>
+                <option value="CHAD">CHAD</option>
+                <option value="CHILE">CHILE</option>
+                <option value="CHINA">CHINA</option>
+                <option value="COLOMBIA">COLOMBIA</option>
+                <option value="COMOROS">COMOROS</option>
+                <option value="CONGO">CONGO</option>
+                <option value="CONGO, DPR">CONGO, DPR</option>
+                <option value="COOK ISLANDS">COOK ISLANDS</option>
+                <option value="COSTA RICA">COSTA RICA</option>
+                <option value="COTE D IVOIRE">COTE D IVOIRE</option>
+                <option value="CROATIA">CROATIA</option>
+                <option value="CUBA">CUBA</option>
+                <option value="CURACAO">CURACAO</option>
+                <option value="CYPRUS">CYPRUS</option>
+                <option value="CZECH REP">CZECH REP</option>
+                <option value="DENMARK">DENMARK</option>
+                <option value="DJIBOUTI">DJIBOUTI</option>
+                <option value="DOMINICA">DOMINICA</option>
+                <option value="Dominican">Dominican</option>
+                <option value="DOMINICAN REP.">DOMINICAN REP.</option>
+                <option value="EAST TIMOR">EAST TIMOR</option>
+                <option value="ECUADOR">ECUADOR</option>
+                <option value="EGYPT">EGYPT</option>
+                <option value="EL SALVADOR">EL SALVADOR</option>
+                <option value="ERITREA">ERITREA</option>
+                <option value="ESTONIA">ESTONIA</option>
+                <option value="Eswatini">Eswatini</option>
+                <option value="ETHIOPIA">ETHIOPIA</option>
+                <option value="FALKLAND ISLANDS">FALKLAND ISLANDS</option>
+                <option value="FAROE ISLANDS">FAROE ISLANDS</option>
+                <option value="FIJI">FIJI</option>
+                <option value="FINLAND">FINLAND</option>
+                <option value="FRANCE">FRANCE</option>
+                <option value="FRENCH GUYANA">FRENCH GUYANA</option>
+                <option value="GABON">GABON</option>
+                <option value="GAMBIA">GAMBIA</option>
+                <option value="GEORGIA">GEORGIA</option>
+                <option value="GERMANY">GERMANY</option>
+                <option value="GHANA">GHANA</option>
+                <option value="GIBRALTAR">GIBRALTAR</option>
+                <option value="GREECE">GREECE</option>
+                <option value="GREENLAND">GREENLAND</option>
+                <option value="GRENADA">GRENADA</option>
+                <option value="GUADELOUPE">GUADELOUPE</option>
+                <option value="GUAM">GUAM</option>
+                <option value="GUATEMALA">GUATEMALA</option>
+                <option value="GUERNSEY">GUERNSEY</option>
+                <option value="GUINEA REP.">GUINEA REP.</option>
+                <option value="GUINEA-BISSAU">GUINEA-BISSAU</option>
+                <option value="GUINEA-EQUATORIAL">GUINEA-EQUATORIAL</option>
+                <option value="GUYANA">GUYANA</option>
+                <option value="HAITI">HAITI</option>
+                <option value="HONDURAS">HONDURAS</option>
+                <option value="HONG KONG">HONG KONG</option>
+                <option value="HUNGARY">HUNGARY</option>
+                <option value="ICELAND">ICELAND</option>
+                <option value="INDIA">INDIA</option>
+                <option value="IRAN">IRAN</option>
+                <option value="IRAQ">IRAQ</option>
+                <option value="IRELAND REP">IRELAND REP</option>
+                <option value="ISRAEL">ISRAEL</option>
+                <option value="ITALY">ITALY</option>
+                <option value="JAMAICA">JAMAICA</option>
+                <option value="JAPAN">JAPAN</option>
+                <option value="JERSEY">JERSEY</option>
+                <option value="JORDAN">JORDAN</option>
+                <option value="KAZAKHSTAN">KAZAKHSTAN</option>
+                <option value="KENYA">KENYA</option>
+                <option value="KIRIBATI">KIRIBATI</option>
+                <option value="KOSOVO">KOSOVO</option>
+                <option value="KUWAIT">KUWAIT</option>
+                <option value="KYRGYZSTAN">KYRGYZSTAN</option>
+                <option value="LAOS">LAOS</option>
+                <option value="LATVIA">LATVIA</option>
+                <option value="LEBANON">LEBANON</option>
+                <option value="LESOTHO">LESOTHO</option>
+                <option value="LIBERIA">LIBERIA</option>
+                <option value="LIBYA">LIBYA</option>
+                <option value="LIECHTENSTEIN">LIECHTENSTEIN</option>
+                <option value="LITHUANIA">LITHUANIA</option>
+                <option value="LUXEMBOURG">LUXEMBOURG</option>
+                <option value="MACAU">MACAU</option>
+                <option value="MACEDONIA REP">MACEDONIA REP</option>
+                <option value="MADAGASCAR">MADAGASCAR</option>
+                <option value="MALAWI">MALAWI</option>
+                <option value="MALAYSIA">MALAYSIA</option>
+                <option value="MALDIVES">MALDIVES</option>
+                <option value="MALI">MALI</option>
+                <option value="MALTA">MALTA</option>
+                <option value="MARIANA ISLANDS">MARIANA ISLANDS</option>
+                <option value="MARSHALL ISLANDS">MARSHALL ISLANDS</option>
+                <option value="MARTINIQUE">MARTINIQUE</option>
+                <option value="MAURITANIA">MAURITANIA</option>
+                <option value="MAURITIUS">MAURITIUS</option>
+                <option value="MAYOTTE">MAYOTTE</option>
+                <option value="MEXICO">MEXICO</option>
+                <option value="MICRONESIA">MICRONESIA</option>
+                <option value="MOLDOVA REP">MOLDOVA REP</option>
+                <option value="MONACO">MONACO</option>
+                <option value="MONGOLIA">MONGOLIA</option>
+                <option value="MONTENEGRO REP">MONTENEGRO REP</option>
+                <option value="MONTSERRAT">MONTSERRAT</option>
+                <option value="MOROCCO">MOROCCO</option>
+                <option value="MOZAMBIQUE">MOZAMBIQUE</option>
+                <option value="MYANMAR">MYANMAR</option>
+                <option value="NAMIBIA">NAMIBIA</option>
+                <option value="Nauru">Nauru</option>
+                <option value="NAURU REP">NAURU REP</option>
+                <option value="NEPAL">NEPAL</option>
+                <option value="NETHERLANDS">NETHERLANDS</option>
+                <option value="NEVIS">NEVIS</option>
+                <option value="NEW CALEDONIA">NEW CALEDONIA</option>
+                <option value="NEW ZEALAND">NEW ZEALAND</option>
+                <option value="NICARAGUA">NICARAGUA</option>
+                <option value="NIGER">NIGER</option>
+                <option value="NIGERIA">NIGERIA</option>
+                <option value="NIUE">NIUE</option>
+                <option value="NORWAY">NORWAY</option>
+                <option value="OMAN">OMAN</option>
+                <option value="PAKISTAN">PAKISTAN</option>
+                <option value="PALAU">PALAU</option>
+                <option value="PANAMA">PANAMA</option>
+                <option value="PAPUA NEW G">PAPUA NEW G</option>
+                <option value="PARAGUAY">PARAGUAY</option>
+                <option value="PERU">PERU</option>
+                <option value="PHILIPPINES">PHILIPPINES</option>
+                <option value="POLAND">POLAND</option>
+                <option value="PORTUGAL">PORTUGAL</option>
+                <option value="PUERTO RICO">PUERTO RICO</option>
+                <option value="QATAR">QATAR</option>
+                <option value="REUNION ISLAND">REUNION ISLAND</option>
+                <option value="Reunion, Island Of">Reunion, Island Of</option>
+                <option value="ROMANIA">ROMANIA</option>
+                <option value="RUSSIAN">RUSSIAN</option>
+                <option value="RWANDA">RWANDA</option>
+                <option value="SAINT HELENA">SAINT HELENA</option>
+                <option value="SAMOA">SAMOA</option>
+                <option value="SAN MARINO">SAN MARINO</option>
+                <option value="SAO TOME AND PRINCIPE">SAO TOME AND PRINCIPE</option>
+                <option value="SAUDI ARABIA">SAUDI ARABIA</option>
+                <option value="SENEGAL">SENEGAL</option>
+                <option value="SERBIA REP">SERBIA REP</option>
+                <option value="SEYCHELLES">SEYCHELLES</option>
+                <option value="SIERRA LEONE">SIERRA LEONE</option>
+                <option value="SINGAPORE">SINGAPORE</option>
+                <option value="SLOVAKIA">SLOVAKIA</option>
+                <option value="SLOVENIA">SLOVENIA</option>
+                <option value="SOLOMON ISLANDS">SOLOMON ISLANDS</option>
+                <option value="SOMALIA">SOMALIA</option>
+                <option value="SOMALILAND">SOMALILAND</option>
+                <option value="SOUTH AFRICA">SOUTH AFRICA</option>
+                <option value="SOUTH KOREA">SOUTH KOREA</option>
+                <option value="SOUTH SUDAN">SOUTH SUDAN</option>
+                <option value="SPAIN">SPAIN</option>
+                <option value="SRI LANKA">SRI LANKA</option>
+                <option value="ST. BARTHELEMY">ST. BARTHELEMY</option>
+                <option value="ST. EUSTATIUS">ST. EUSTATIUS</option>
+                <option value="ST. KITTS">ST. KITTS</option>
+                <option value="ST. LUCIA">ST. LUCIA</option>
+                <option value="ST. MAARTEN">ST. MAARTEN</option>
+                <option value="ST. VINCENT">ST. VINCENT</option>
+                <option value="SUDAN">SUDAN</option>
+                <option value="SURINAME">SURINAME</option>
+                <option value="SWAZILAND">SWAZILAND</option>
+                <option value="SWEDEN">SWEDEN</option>
+                <option value="SWITZERLAND">SWITZERLAND</option>
+                <option value="SYRIA">SYRIA</option>
+                <option value="TAHITI">TAHITI</option>
+                <option value="TAIWAN">TAIWAN</option>
+                <option value="TAJIKISTAN">TAJIKISTAN</option>
+                <option value="TANZANIA">TANZANIA</option>
+                <option value="THAILAND">THAILAND</option>
+                <option value="TOGO">TOGO</option>
+                <option value="TONGA">TONGA</option>
+                <option value="TRINIDAD AND TOBAGO">TRINIDAD AND TOBAGO</option>
+                <option value="TUNISIA">TUNISIA</option>
+                <option value="TURKEY">TURKEY</option>
+                <option value="TURKMENISTAN">TURKMENISTAN</option>
+                <option value="TURKS AND CAICOS">TURKS AND CAICOS</option>
+                <option value="TUVALU">TUVALU</option>
+                <option value="UGANDA">UGANDA</option>
+                <option value="UKRAINE">UKRAINE</option>
+                <option value="UNITED ARAB EMIRATES">UNITED ARAB EMIRATES</option>
+                <option value="UNITED KINGDOM">UNITED KINGDOM</option>
+                <option value="United States of America">United States of America</option>
+                <option value="URUGUAY">URUGUAY</option>
+                <option value="UZBEKISTAN">UZBEKISTAN</option>
+                <option value="VANUATU">VANUATU</option>
+                <option value="VATICAN CITY">VATICAN CITY</option>
+                <option value="VENEZUELA">VENEZUELA</option>
+                <option value="VIETNAM">VIETNAM</option>
+                <option value="VIRGIN ISLANDS-BRITISH">VIRGIN ISLANDS-BRITISH</option>
+                <option value="VIRGIN ISLANDS-US">VIRGIN ISLANDS-US</option>
+                <option value="YEMEN">YEMEN</option>
+                <option value="ZAMBIA">ZAMBIA</option>
+                <option value="ZIMBABWE">ZIMBABWE</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-lg-2 col-md-3 col-form-label label">City</label>
+            <div class="col-lg-3 col-md-4 my-auto">
+              <input class="form-control" type="text" id="city_name" name="city_name" />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label class="col-lg-2 col-md-3 col-form-label label">Zip Code</label>
+            <div class="col-lg-3 col-md-4 my-auto">
+              <input class="form-control" type="text" id="post_code" name="post_code" />
+            </div>
+          </div>
+          <!-- <div class="row mb-3">
+            <label class="col-2 col-form-label label">Type</label>
+            <div class="col-3">
+              <select class="form-select" id="service_rjm" name="service_rjm" required>
+                <option selected disabled>Choose Destination</option>
+                <option value="D">Document</option>
+                <option value="ND">Package</option>
+              </select>
+            </div>
+          </div> -->
+          <!-- SIMULATE RJM -->
+          <div class="row disini_rjm pt-3">
+            <div class="col-lg-3 col-md-6 g-0">
+              <div class="card card-calculate my-1 mx-1">
+                <div class="card-body card-result">
+                  <div class="row pb-2">
+                    <div class="col"><h5 class="card-title fw-bold pb-3">Package</h5></div>
+                  </div>
+                  <div class="row">
+                    <div class="col pb-3"><input class="form-control" type="text" placeholder="Berat (Kg)" name="berat_rjm[]" /></div>
+                    <div class="col"><input class="form-control" type="text" placeholder="Panjang (Cm)" name="panjang_rjm[]" /></div>
+                  </div>
+                  <div class="row">
+                    <div class="col pb-3"><input class="form-control" type="text" placeholder="Tinggi (Cm)" name="tinggi_rjm[]" /></div>
+                    <div class="col"><input class="form-control" type="text" placeholder="Lebar (Cm)" name="lebar_rjm[]" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- SIMULATE RJM -->
+          <div class="row pt-3">
+            <div class="text-center text-sm-start col-md-5 col-lg-2 pb-1"><button type="button" class="btn" id="calculate_rjm">Calculate</button></div>
+            <div class="text-center text-sm-start col-md-5 col-lg-2"><button type="button" class="btn tambah_rjm">Add Package</button></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="row pt-5" id="print_rjm">
+              <label class="header">Result SOSRJM</label>
+              <div class="card card-result">
+                <div class="card-body font-result">
+                  <div class="row">
+                    <div class="col-md-4">Total Packages</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tp_rjm" name="tp_rjm"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Chargeable Weight (Kg)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="cw_rjm" name="cw_rjm"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Freight Charges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fc_rjm" name="fc_rjm"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">ESS</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ess_rjm" name="ess_rjm"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Overweight Subcharges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="os_rjm" name="os_rjm"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Remote Area</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ra_rjm" name="ra_rjm"></div>
+                  </div>
+                  <div class="row pt-2 mb-2">
+                    <div class="col-md-4">Fuel Surcharge (...%)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fs_rjm" name="fs_rjm"></div>
+                  </div>
+                  <div class="row pt-2" style="border-top: solid">
+                    <div class="col-md-4">Total before VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tbv_rjm" name="tbv_rjm"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Total after VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tav_rjm" name="tav_rjm"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center pt-3">
+              <!-- <div class="col-2">
+            <button type="button" class="btn" style="width: 290px; height: 50px; font-size: 24px">Simulate Again</button>
+          </div> -->
+              <div class="text-center col-md-5 col-lg-2">
+                <button type="button" class="btn print-result" onclick="printDiv('print_rjm')">Print</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- RJM -->
+
+      <!-- JFCC -->
+      <section>
+        <p class="col-md-6 col-lg-5 text-center mb-3 header2">Japan First Class Courier (JFCC)</p>
+        <p class="col-md-6 col-lg-5 mb-5 ps-2 text-danger note">JFCC is only for shipment with weight 45 kgs and above, otherwise please use SOSRJM Service</p>
+        <div class="row mb-3">
+          <label class="col-lg-2 col-md-3 col-form-label label">Services</label>
+          <div class="col-lg-3 col-md-4">
+            <select class="form-select" id="jfcc_type" name="jfcc_type">
+              <option selected disabled>Choose Service</option>
+              <option value="Door to Door">Door to Door</option>
+              <option value="Door to Port">Door to Port</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-lg-2 col-md-3 col-form-label label">Destination</label>
+          <div class="col-lg-3 col-md-4">
+            <select class="form-select" id="destination_jfcc" name="destination_jfcc" required>
+              <option selected disabled>Choose Destination</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg-2 col-md-3 col-form-label flight label">Flight</div>
+          <div class="col-lg-3 col-md-4 flight">
+            <select class="form-select" id="flight" name="flight" required>
+              <option selected disabled>Choose Flight</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- SIMULATE JFCC -->
+        <div class="row disini_jfcc pt-3">
+          <div class="col-lg-3 col-md-6 g-0">
+            <div class="card my-1 mx-1 card-calculate">
+              <div class="card-body">
+                <div class="row pb-2">
+                  <div class="col"><h5 class="card-title fw-bold pb-3">Package</h5></div>
+                </div>
+                <div class="row">
+                  <div class="col pb-3"><input class="form-control" type="text" placeholder="Berat (Kg)" name="berat_jfcc[]" id="berat_jfcc" /></div>
+                  <div class="col"><input class="form-control" type="text" placeholder="Panjang (Cm)" name="panjang_jfcc[]" /></div>
+                </div>
+                <div class="row">
+                  <div class="col pb-3"><input class="form-control" type="text" placeholder="Tinggi (Cm)" name="tinggi_jfcc[]" /></div>
+                  <div class="col"><input class="form-control" type="text" placeholder="Lebar (Cm)" name="lebar_jfcc[]" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SIMULATE JFCC -->
+        <div class="row pt-3">
+          <div class="text-center text-sm-start col-md-5 col-lg-2 pb-1"><button type="submit" class="btn" id="calculate_jfcc">Calculate</button></div>
+          <div class="text-center text-sm-start col-md-5 col-lg-2"><button type="button" class="btn tambah_jfcc">Add Package</button></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="row pt-5" id="print_jfcc">
+              <label class="header">Result JFCC</label>
+              <div class="card card-result">
+                <div class="card-body font-result">
+                  <div class="row">
+                    <div class="col-md-4">Total Packages</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tp_jfcc" name="tp_jfcc"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Chargeable Weight (Kg)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="cw_jfcc" name="cw_jfcc"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Freight Charges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fc_jfcc" name="fc_jfcc"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">ESS</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ess_jfcc" name="ess_jfcc"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Overweight Subcharges</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="os_jfcc" name="os_jfcc"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Remote Area</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="ra_jfcc" name="ra_jfcc"></div>
+                  </div>
+                  <div class="row pt-2 mb-2">
+                    <div class="col-md-4">Fuel Surcharge (...%)</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="fs_jfcc" name="fs_jfcc"></div>
+                  </div>
+                  <div class="row pt-2" style="border-top: solid">
+                    <div class="col-md-4">Total before VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tbv_jfcc" name="tbv_jfcc"></div>
+                  </div>
+                  <div class="row pt-2">
+                    <div class="col-md-4">Total after VAT 1%</div>
+                    <div class="col-md-1">:</div>
+                    <div class="col-md" id="tav_jfcc" name="tav_jfcc"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center pt-3">
+              <!-- <div class="col-2">
+            <button type="button" class="btn" style="width: 290px; height: 50px; font-size: 24px">Simulate Again</button>
+          </div> -->
+              <div class="text-center col-md-5 col-lg-2">
+                <button type="button" class="btn print-result mb-3" onclick="printDiv('print_jfcc')">Print</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- JFCC -->
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script>
+      function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+      }
+      $(document).ready(function () {
+        $(".select2").select2();
+        $('b[role="presentation"]').hide();
+        $(".select2-selection__arrow").append('<i class="fa fa-angle-down"></i>');
+        $('[name="destination_rjm"]').on("change", function () {
+          let remote = $('[name="destination_rjm"] option:selected').data("remote");
+          // console.log(remote);
+          if (remote == "NO") {
+            $("#city_name").attr("readonly", true);
+            $("#post_code").attr("readonly", true);
+          } else {
+            $("#city_name").attr("readonly", false);
+            $("#post_code").attr("readonly", false);
+          }
+        });
+        $("#form-simulation-rjm-sos").on("submit", function (e) {
+          e.preventDefault();
+          let data = $("#form-simulation-rjm-sos").serialize();
+          $.ajax({
+            url: "simulation_sosrjm_ajax.php?m=RJM-SOS",
+            data: data,
+            method: "get",
+            cache: false,
+            dataType: "json",
+            success: function (hasil) {
+              if (hasil.sukses === true) {
+                $("#tp_rjm").text(hasil.tp_rjm);
+                $("#cw_rjm").text(hasil.cw_rjm);
+                $("#fc_rjm").text(hasil.fc_rjm);
+                $("#ess_rjm").text(hasil.ess_rjm);
+                $("#os_rjm").text(hasil.os_rjm);
+                $("#ra_rjm").text(hasil.ra_rjm);
+                $("#fs").text(hasil.fs_dhl);
+                $("#fs_rjm").text(hasil.fs_rjm);
+                $("#tbv_rjm").text(hasil.tbv_rjm);
+                $("#tav_rjm").text(hasil.tav_rjm);
+              } else {
+              }
+            },
+          });
+        });
+
+        $("#form-simulation-jfcc").on("submit", function (e) {
+          e.preventDefault();
+          let data = $("#form-simulation-jfcc").serialize();
+          $.ajax({
+            url: "simulation_jfcc_ajax.php?m=JFCC",
+            data: data,
+            method: "get",
+            cache: false,
+            dataType: "json",
+            success: function (hasil) {
+              if (hasil.sukses === true) {
+                console.log(hasil);
+                $("#tp_jfcc").text(hasil.tp_jfcc);
+                $("#cw_jfcc").text(hasil.cw_jfcc);
+                $("#fc_jfcc").text(hasil.fc_jfcc);
+                $("#ess_jfcc").text(hasil.ess_jfcc);
+                $("#os_jfcc").text(hasil.os_jfcc);
+                $("#ra_jfcc").text(hasil.ra_jfcc);
+                $("#fs_jfcc_persen").text(hasil.fs_dhl);
+                $("#fs_jfcc").text(hasil.fs_jfcc);
+                $("#tbv_jfcc").text(hasil.tbv_jfcc);
+                $("#tav_jfcc").text(hasil.tav_jfcc);
+              } else {
+              }
+            },
+          });
+        });
+      });
+    </script>
+
+    <script src="js/simulation_cloner.js"></script>
+    <script src="js/jfcc.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

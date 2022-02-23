@@ -1,0 +1,91 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+.font-result {
+  font-size: 24px;
+}
+.form-control,
+.form-select {
+  border-width: 2px;
+  border-color: black;
+  font-size: 21px;
+}
+.form-control::placeholder {
+  color: black;
+  opacity: 1;
+  /* font-size: 21px; */
+  font-weight: 600;
+}
+.res {
+  border-color: white;
+  font-size: 21px;
+  font-weight: 500px;
+}
+.title {
+  font-size: 36px;
+  margin-top: 75px;
+}
+.header {
+  font-size: 32px;
+}
+.header1 {
+  font-size: 32px;
+  margin-top: 50px;
+  background-color: #ffcc01;
+  color: #d70512;
+  border-radius: 5px;
+}
+.header2 {
+  font-size: 32px;
+  margin-top: 50px;
+  background-color: #ea1616;
+  color: white;
+  border-radius: 5px;
+}
+.card-calculate {
+  border-radius: 20px;
+  border-top: none;
+  box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.45);
+}
+#calculate_rjm,
+#calculate_jfcc {
+  background-color: #699bf7;
+  color: white;
+  width: 290px;
+  height: 50px;
+  font-size: 24px;
+}
+.tambah_rjm,
+.tambah_jfcc {
+  border-width: 2px;
+  border-color: #699bf7;
+  color: #699bf7;
+  width: 290px;
+  height: 50px;
+  font-size: 24px;
+}
+.label {
+  font-size: 27px;
+}
+.card-result {
+  border-width: 3px;
+  border-radius: 5px;
+  border-color: black;
+}
+.print-result {
+  background-color: #03aa6f;
+  color: white;
+  width: 290px;
+  height: 50px;
+  font-size: 24px;
+}
+.note {
+  text-align: justify;
+  text-justify: inter-word;
+}
+@media (max-width: 400px) {
+  body {
+    font-weight: 400;
+  }
+}
