@@ -15,11 +15,13 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../pickup/aset/jquery-ui/jquery-ui.min.css" />
 
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/simulation_domestic_new2.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../pickup/aset/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- select2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
@@ -218,11 +220,8 @@
       function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
         var originalContents = document.body.innerHTML;
-
         document.body.innerHTML = printContents;
-
         window.print();
-
         document.body.innerHTML = originalContents;
       }
     </script>

@@ -244,8 +244,39 @@
         document.body.innerHTML = originalContents;
       }
     </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#form-simulation-air-cargo").on("submit", function (e) {
+          e.preventDefault();
+          let data = $("#form-simulation-air-cargo").serialize();
+          $.ajax({
+            url: "simulation_air_cargo_ajax.php",
+            data: data,
+            method: "get",
+            cache: false,
+            dataType: "json",
+            success: function (hasil) {
+              if (hasil.sukses === true) {
+                console.log(hasil);
+                $("#tp_air").text(hasil.tp_air);
+                $("#cw_air").text(hasil.cw_air);
+                $("#fc_air").text(hasil.fc_air);
+                $("#ess_air").text(hasil.ess_air);
+                $("#os_air").text(hasil.os_air);
+                $("#ra_air").text(hasil.ra_air);
+                $("#fs_air_persen").text(hasil.fs_dhl);
+                $("#fs_air").text(hasil.fs_air);
+                $("#tbv_air").text(hasil.tbv_air);
+                $("#tav_air").text(hasil.tav_air);
+              } else {
+              }
+            },
+          });
+        });
+      });
+    </script>
 
-    <script src="js/simulation_air_cargo.js.js"></script>
+    <script src="js/simulation_air_cargo.js"></script>
     <script src="js/simulation_air_cargo_cloner.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
