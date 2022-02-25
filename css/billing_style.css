@@ -52,3 +52,11 @@ tr,
 td {
   border-color: #172b85;
 }
+.btn3 {
+  background-color: #699bf7;
+  color: white;
+}
+.form-control {
+  border: 2px solid black;
+  border-radius: 5px;
+}
